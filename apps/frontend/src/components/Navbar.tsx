@@ -1,7 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 const Navbar = () => {
-	const navigate = useNavigate();
 	return (
 		<div className="flex justify-between items-center px-10 border-b-[1px] py-1 border-[#272a2b]">
 			{/* <h3 className="font-bold text-[#00afd2] text-4xl ">TimelyAlert</h3>

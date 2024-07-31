@@ -30,7 +30,12 @@ const GetAlert = () => {
 	const [timeLimit, setTimeLimit] = useState("5");
 
 	// Calculate distance using Haversine formula
-	const calculateDistance = (lat1, lng1, lat2, lng2) => {
+	const calculateDistance = (
+		lat1: number,
+		lng1: number,
+		lat2: number,
+		lng2: number
+	) => {
 		const R = 6371; // Radius of the Earth in km
 		const dLat = (lat2 - lat1) * (Math.PI / 180);
 		const dLng = (lng2 - lng1) * (Math.PI / 180);
@@ -138,16 +143,18 @@ const GetAlert = () => {
 			console.log("Distance", dist);
 
 			if (speed) {
-				setTimeLeft(dist / speed);
+				setTimeLeft((dist / speed).toString());
 			}
 			if (!speed && dist < 2) {
 				if (audioRef.current) {
+					// @ts-ignore
 					audioRef.current.play();
 				}
 			} else {
 				const time = dist / speed;
 				if (time * 60 < Number(timeLimit)) {
 					if (audioRef.current) {
+						// @ts-ignore
 						audioRef.current.play();
 					}
 				}
