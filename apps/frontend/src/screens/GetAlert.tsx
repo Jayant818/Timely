@@ -165,7 +165,7 @@ const GetAlert = () => {
 	useEffect(() => {}, []);
 
 	if (location.lat == 0 || destination.lat == 0) {
-		return <h1> Connecting...</h1>;
+		return <div className="h-screen"> Connecting...</div>;
 	}
 	// const position = [51.505, -0.09];
 	return (
