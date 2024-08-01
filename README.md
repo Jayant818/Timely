@@ -1,8 +1,8 @@
-# TimelyAlert
+# Timely
 
 ### Your smart travel companion that ensures you never miss your stop.
 
-TimelyAlert is a web application designed to help travelers, commuters, and tourists arrive at their destinations on time. By providing timely alerts before reaching your stop, TimelyAlert ensures you can relax during your journey without the stress of potentially missing your destination.
+Timely is a web application designed to help travelers, commuters, and tourists arrive at their destinations on time. By providing timely alerts before reaching your stop, TimelyAlert ensures you can relax during your journey without the stress of potentially missing your destination.
 
 ## Features
 
