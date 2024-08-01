@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-// import useSocket from "../hooks/useSocket";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const GetAlert = () => {
 	// const socket = useSocket();
@@ -162,26 +162,23 @@ const GetAlert = () => {
 		}
 	}, [location, destination]);
 
-	useEffect(() => {}, []);
-
 	if (location.lat == 0 || destination.lat == 0) {
 		return <div className="h-screen"> Connecting...</div>;
 	}
-	// const position = [51.505, -0.09];
 	return (
-		<div className="h-screen">
+		<div>
 			<Navbar />
 			<audio ref={audioRef} src="/mixkit-retro-game-emergency-alarm-1000.wav" />
-			<div className="flex justify-between px-10 pt-6 pb-4">
-				<div className="flex gap-10">
+			<div className="flex justify-between px-4 md:px-10 pt-6 pb-4 flex-col md:flex-row gap-4">
+				<div className="flex gap-6 md:gap-10 justify-between">
 					<div>
-						<h3 className="text-2xl">Destination</h3>
+						<h3 className="text-xl md:text-2xl">Destination</h3>
 						<div>{userDestination}</div>
 					</div>
 					{remDistance && (
 						<div>
-							<h3 className="text-2xl">Distance Rem.</h3>
-							<div className="text-center text-lg">
+							<h3 className="text-xl md:text-2xl">Distance Rem.</h3>
+							<div className="text-center md:text-lg">
 								{Math.floor(remDistance)
 									? Math.floor(remDistance)
 									: remDistance}
@@ -190,31 +187,22 @@ const GetAlert = () => {
 						</div>
 					)}
 				</div>
-				<div className="flex gap-10">
+				<div className="flex gap-6  md:gap-10 justify-between">
 					<div>
-						<h3 className="text-2xl">Time Left</h3>
-						<div className="text-center text-lg">{timeLeft} hr</div>
+						<h3 className="text-xl  md:text-2xl">Time Left</h3>
+						<div className="text-base text-center md:text-lg">
+							{timeLeft} hr
+						</div>
 					</div>
 					<div>
-						<h3 className="text-2xl">Speed</h3>
-						<div className="text-center text-lg">{speed} km/hr</div>
+						<h3 className="text-xl md:text-2xl">Speed</h3>
+						<div className="text-base md:text-center md:text-lg">
+							{speed} km/hr
+						</div>
 					</div>
 				</div>
 			</div>
 			<div id="map">
-				{/* <MapContainer
-					style={{ width: "100%", height: "100%", position: "relative" }}
-					center={{ lat: 51.505, lng: -0.09 }}
-					zoom={13}
-					scrollWheelZoom={false}
-				>
-					<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-					<Marker position={{ lat: 51.505, lng: -0.09 }}>
-						<Popup>Jayant Lives Here, come over for a cup of coffee :)</Popup>
-					</Marker>
-				</MapContainer> */}
-				{/* {JSON.stringify({ lat: location.lat, lng: location.lng })}
-				{JSON.stringify({ lat: destination.lat, lng: destination.lng })} */}
 				<MapContainer
 					style={{ width: "100%", height: "100%", position: "relative" }}
 					// center={{ lat: 28.4440182, lng: 77.0261667 }}
@@ -226,7 +214,6 @@ const GetAlert = () => {
 						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 					/>
-					{/* <Marker position={{ lat: 28.4440182, lng: 77.0261667 }}> */}
 					<Marker position={{ lat: location.lat, lng: location.lng }}>
 						<Popup>Your Location</Popup>
 					</Marker>
@@ -235,6 +222,7 @@ const GetAlert = () => {
 					</Marker>
 				</MapContainer>
 			</div>
+			<Footer />
 		</div>
 	);
 };

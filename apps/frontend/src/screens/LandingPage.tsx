@@ -16,23 +16,25 @@ const LandingPage = () => {
 	return (
 		<div className="pt-4">
 			<Navbar />
-			<div className="flex flex-col justify-between items-center mt-[10rem] text-white">
-				<h2 className="text-6xl font-bold">Never Miss Your Stop Again</h2>
-				<p className="text-2xl pt-2">
+			<div className="flex flex-col justify-between items-center mt-[5rem] md:mt-[10rem] text-white px-4">
+				<h2 className="text-3xl md:text-6xl font-bold">
+					Never Miss Your Stop Again
+				</h2>
+				<p className="text-lg md:text-2xl pt-2">
 					Stay alert and arrive on time with our smart travel companion
 				</p>
-				<div className="flex mt-4 relative">
+				<div className="flex flex-col mt-4 relative mx-4 bg-[#00afd2] md:bg-transparent w-fit rounded-full md:rounded-none ">
 					<input
 						type="text"
 						placeholder="Enter your Destination"
 						value={location}
-						className="  rounded-full px-10 pr-[14.5rem]  py-4 bg-[#121212] text-[#5e5c56] focus:outline-none border-2 border-[#00afd2] text-lg w-[30rem]"
+						className="   px-4 md:px-10 md:pr-[14.5rem]  py-4 bg-[#121212] text-[#5e5c56] focus:outline-none border-2 border-[#00afd2] text-sm md:text-lg w-[20rem] md:rounded-full  md:w-[30rem]"
 						onChange={(e) => setLocation(e.target.value)}
 					/>
 					<select
 						value={time}
 						onChange={(e) => setTime(e.target.value)}
-						className="absolute right-[9.3rem] bg-[#121212] text-[#5e5c56] focus:outline-none py-[14px] top-2   text-lg"
+						className="md:absolute right-[9.3rem] bg-[#121212] text-[#5e5c56] focus:outline-none py-[14px] top-2  md:rounded-none px-4  text-lg"
 					>
 						<option value={5}>5 Min</option>
 						<option value={10}>10 Min</option>
@@ -42,7 +44,7 @@ const LandingPage = () => {
 					</select>
 					<button
 						onClick={handleClick}
-						className="absolute font-medium  flex items-center gap-2 right-0 pr-4 pl-2 rounded-e-full rounded-s-xl bg-[#00afd2] py-[17.7px] text-lg "
+						className="md:absolute font-medium  flex items-center justify-center gap-2 right-0 pr-4 pl-2   md:rounded-e-full md:rounded-s-xl bg-[#00afd2] py-[17.7px] text-lg "
 					>
 						Try for FREE <FaArrowRightLong />{" "}
 					</button>
@@ -52,17 +54,21 @@ const LandingPage = () => {
 				id="features"
 				className="flex gap-4  flex-col items-start w-full justify-between pb-20 mt-28"
 			>
-				<h3 className="pl-20 text-4xl font-extrabold text-white">Features</h3>
-				<div className="flex w-full  justify-between px-20 pt-4">
+				<h3 className="pl-4  md:pl-20 text-2xl md:text-4xl font-extrabold text-white">
+					Features
+				</h3>
+				<div className="flex w-full flex-col md:flex-row gap-4 justify-between px-4 md:px-20 pt-4">
 					<div className="flex flex-col p-4 gap-4 border-[1px] border-[#00afd2]  rounded-lg text-white  bg-[#181a1b]  items-center">
 						<img
 							src="img-1.png"
 							alt="Destination Icon"
-							className="w-[12renm] h-[12rem]"
+							className="w-[12rem] h-[12rem]"
 						/>
-						<h3 className="text-2xl font-bold">Easy Destination Input</h3>
+						<h3 className="text-xl md:text-2xl font-bold">
+							Easy Destination Input
+						</h3>
 
-						<p className="w-[18rem]">
+						<p className="w-full md:w-[18rem] ">
 							Quickly set your travel plans with our user-friendly interface.
 						</p>
 					</div>
@@ -71,10 +77,10 @@ const LandingPage = () => {
 						<img
 							src="img-2.png"
 							alt="Alert Icon"
-							className="w-[12renm] h-[12rem]"
+							className="w-[12rem] h-[12rem]"
 						/>
 						<h3 className="text-2xl font-bold">Smart Alerts</h3>
-						<p className="w-[18rem]">
+						<p className="w-full md:w-[18rem]">
 							Receive timely notifications 5 minutes before reaching your
 							destination.
 						</p>
@@ -84,10 +90,10 @@ const LandingPage = () => {
 						<img
 							src="img-3.png"
 							alt="Customize Icon"
-							className="w-[12renm] h-[12rem]"
+							className="w-[12rem] h-[12rem]"
 						/>
 						<h3 className="text-2xl font-bold">Personalized Settings</h3>
-						<p className="w-[18rem]">
+						<p className="w-full md:w-[18rem]">
 							Tailor alert types and timing to suit your individual travel
 							preferences.
 						</p>
